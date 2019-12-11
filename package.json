@@ -1,0 +1,33 @@
+{
+  "name": "customer_loans",
+  "version": "1.0.0",
+  "description": "an online application that will allow the capture of the information",
+  "main": "index.js",
+  "scripts": {
+    "db:migrate": "sequelize db:migrate --config database/config/config.js --migrations-path database/migrations",
+    "db:migrate-undo": "sequelize db:migrate:undo:all --config database/config/config.js --migrations-path database/migrations",
+    "start:dev": "nodemon index.js",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LostLite/customer_loans.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LostLite/customer_loans/issues"
+  },
+  "homepage": "https://github.com/LostLite/customer_loans#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.3.0",
+    "mysql": "^2.17.1",
+    "sequelize": "^5.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}
