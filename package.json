@@ -7,7 +7,7 @@
     "db:migrate": "sequelize db:migrate --config database/config/config.js --migrations-path database/migrations",
     "db:migrate-undo": "sequelize db:migrate:undo:all --config database/config/config.js --migrations-path database/migrations",
     "start:dev": "nodemon index.js",
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,18 @@
   },
   "homepage": "https://github.com/LostLite/customer_loans#readme",
   "dependencies": {
+    "async": "^3.1.0",
     "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
     "express-validator": "^6.3.0",
+    "morgan": "^1.9.1",
     "mysql": "^2.17.1",
-    "sequelize": "^5.21.2"
+    "mysql2": "^2.0.2",
+    "sequelize": "^5.21.2",
+    "xlsx": "^0.15.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
