@@ -12,10 +12,12 @@ module.exports = (sequelize, DataTypes) => {
   Loans.associate = function(models) {
     // associations can be defined here
     Loans.belongsTo(models.UnitStations, {
-      as: 'unitStationsId'
+      foreignKey: 'customerStation', 
+      targetKey: 'id'
     });
     Loans.belongsTo(models.LoanStatus,{
-      as: 'loanStatusId'
+      foreignKey: 'loanStatus',
+      targetKey: 'id'
     });
   };
   return Loans;

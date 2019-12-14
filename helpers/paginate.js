@@ -1,7 +1,7 @@
-const pageSize = 20;
+const pageSize = 50;
 
 const paginate = ({ page }) => {
-    const offset = page * pageSize;
+    const offset = (page - 1) * pageSize;
     const limit = pageSize;
   
     return {

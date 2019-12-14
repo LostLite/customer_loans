@@ -10,21 +10,22 @@ module.exports = {
             
             if(!req.files)
                 return res.status(400).json({ message: 'Upload a file to process'})
-                
-            const { stationFile } = req.files;
-            if(stationFile.mimetype !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+              
+            const { uploadFile } = req.files;
+            if(!uploadFile || 
+                uploadFile.mimetype !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
                 return res.status(400).json({
                     message: 'Only .xls or .xlsx files allowed'
                 })
             
-            extractExcelData(stationFile.data, 
+            extractExcelData(uploadFile.data, 
                             'loan_status', 
                             loanStatusSchema,
                             db.LoanStatus, 
                             async (report) => {
                     return res.status(report.status).json({
                         message: report.message,
-                        data: stationFile.name
+                        data: uploadFile.name
                     });
             });                
         
